@@ -1,4 +1,4 @@
-##1 Python3中引入Queue会报出这个问题。
+## 1 Python3中引入Queue会报出这个问题。
 
 Python3中要这样引入：
 import queue
@@ -13,7 +13,7 @@ if sys.version > '3':
 else:
     import Queue
 
-##2 NameError:name ‘xrange’ is not defined
+## 2 NameError:name ‘xrange’ is not defined
 原因：
 
 在Python 3中，range()与xrange()合并为range( )。
@@ -22,7 +22,7 @@ else:
 
 将xrange( )函数全部换为range( )。
 
-##3 生成器对象（generation object）运行以下代码时，遇到了一个错误：
+## 3 生成器对象（generation object）运行以下代码时，遇到了一个错误：
 
     #定义生成器函数
     def liebiao():
@@ -44,21 +44,15 @@ else:
 https://blog.csdn.net/weixin_44316575/article/details/89258034
 
 
-##4 尝试将一个数字转换为Unicode。所以我尝试使用built-in function called ‘unichr‘，
+## 4 尝试将一个数字转换为Unicode。所以我尝试使用built-in function called ‘unichr‘，
 >>> print repr(unichr(8224))
 
-…并输出：
-
-u'\u2020'
-
-但代码失败。我认为它与打印有关(因为Python 3使用print()而不是print“”)，但这并没有奏效。我尝试了几个代码的变体，它仍然失败。最后，我刚刚输入一个简单的行：
+应输出：u'\u2020'
 
 unichr(10000)
 
 这个错误信息不断
 NameError: name 'unichr' is not defined
-
-可能是什么问题呢？是否有一些我应该导入的具体模块？
 
 在Python 3中，您只需使用chr：
 >>> chr(10000)
